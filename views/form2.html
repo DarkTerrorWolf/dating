@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> profile</h1>
+<form action="#" method="post" class="form-horizontal">
+    <label for="email" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-4">
+        <input class="form-control" type="text" name="email" id="email">
+    </div>
+
+    <label for="bio" class="col-sm-2 control-label">Biography</label>
+    <div class="col-sm-4">
+        <input class="form-control" type="text" name="bio" id="bio">
+    </div>
+    <label for="state" class="col-sm-2 control-label">State</label>
+    <div class="col-sm-4">
+        <!--<input class="form-control" type="text" name="state" id="state">-->
+        <select name="state" id="state">
+            <repeat group="{{$states}}" value="{{@stat}}">
+                <option value="{{(@stat)}}">{{@stat}}</option>
+            </repeat>
+        </select>
+    </div>
+    <div>
+        <label for="male" class="col-sm-2 control-label">Seeking</label>
+        <input type="radio" name="seek" id="male" value="male">Male<br>
+        <input type="radio" name="seek" id="female" value="female">Female<br>
+    </div>
+    <div class="col-xs-3 ">
+        <input class="form-control btn btn-default"
+               type="submit" value="next>>">
+    </div>
+</form>
+</body>
+</html>

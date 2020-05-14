@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" method="post" class="form-horizontal">
+   <!-- <div>
+        <input type="checkbox" name="outdoor" id="hiking" value="hiking"> Hiking
+        <input type="checkbox" name="outdoor" id="kayaking" value="kayaking"> Kayaking
+        <input type="checkbox" name="outdoor" id="walks" value="walks"> Walks
+        <input type="checkbox" name="outdoor" id="biking" value="biking">Biking
+        <input type="checkbox" name="outdoor" id="swimming" value="swimming">Swimming
+        <input type="checkbox" name="outdoor" id="collecting" value="collecting">collecting
+    </div>-->
+
+    <div class="form-group">
+        <h1>Interests</h1>
+        <div class="col-sm-4">
+            <h3>In-door interests</h3>
+            <repeat group="{{ @inside }}" value="{{ @in }}">
+                <input type="checkbox" name="indoor[]" id="{{ @in }}" value="{{ @in}}">{{ @in}}
+            </repeat>
+
+        </div>
+        <div class="col-sm-4">
+            <h3>Out-door interests</h3>
+            <repeat group="{{ @outside }}" value="{{ @out }}">
+                <input type="checkbox" name="outdoor[]" id="{{ @out }}" value="{{ @out}}">{{ @out}}
+            </repeat>
+            <div class="col-xs-3 ">
+                <input class="form-control btn btn-default"
+                       type="submit" value="Submit">
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

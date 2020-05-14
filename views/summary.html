@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='info'>
+    <p>Name: {{@SESSION.fname}} {{@SESSION.lname}}</p>
+    <hr>
+    <p>Gender: {{@SESSION.gender}}</p>
+    <hr>
+    <p>Age: {{@SESSION.age}}</p>
+    <hr>
+    <p>Phone: {{@SESSION.phone}}</p>
+    <hr>
+    <p>Email: {{@SESSION.email}}</p>
+    <hr>
+    <p>State: {{@SESSION.state}}</p>
+    <hr>
+    <p>Seeking: {{@SESSION.seek}}</p>
+    <hr>
+    <p>Interests:
+        <repeat group="{{@SESSION.indoor}}" value="{{@in}}">
+            {{@in}},
+        </repeat>
+        <repeat group="{{@SESSION.outdoor}}" value="{{@out}}">
+            {{@out}},
+        </repeat>
+    </p>
+</div>
+<p id="bio">bio: {{@SESSION.bio}}</p>
+</body>
+</html>
