@@ -15,13 +15,13 @@
         <label for="bio" class="col-sm-2 control-label" >Biography</label>
         <input class="form-control" type="text" name="bio" id="bio">
     </div>
-    <label for="email" class="col-sm-2 control-label">Email</label>
-    <div class="col-sm-4">
+    <label for="email" class="col-md-2 control-label">Email</label>
+    <div class="col-md-6">
         <input class="form-control" type="text" name="email" id="email">
     </div>
 
-    <label for="state" class="col-sm-2 control-label">State</label>
-    <div class="col-sm-4">
+    <label for="state" class="col-md-2 control-label">State</label>
+    <div class="col-md-6">
         <!--<input class="form-control" type="text" name="state" id="state">-->
         <select name="state" id="state">
             <repeat group="{{$states}}" value="{{@stat}}">
@@ -35,7 +35,7 @@
         <input type="radio" name="seek" id="female" value="female">Female<br>
     </div>
     <div class="col-xs-3  float-right">
-        <input class="form-control btn btn-default" id="submit"
+        <input class="form-control btn btn-default rounded" id="submit"
                type="submit" value="next>>">
     </div>
 </form>
