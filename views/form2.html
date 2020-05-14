@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/formStyle1.css">
 </head>
 <body>
 <h1> profile</h1>
+<hr>
 <form action="#" method="post" class="form-horizontal">
+    <div class="col-sm-4 float-right">
+        <label for="bio" class="col-sm-2 control-label" >Biography</label>
+        <input class="form-control" type="text" name="bio" id="bio">
+    </div>
     <label for="email" class="col-sm-2 control-label">Email</label>
     <div class="col-sm-4">
         <input class="form-control" type="text" name="email" id="email">
     </div>
 
-    <label for="bio" class="col-sm-2 control-label">Biography</label>
-    <div class="col-sm-4">
-        <input class="form-control" type="text" name="bio" id="bio">
-    </div>
     <label for="state" class="col-sm-2 control-label">State</label>
     <div class="col-sm-4">
         <!--<input class="form-control" type="text" name="state" id="state">-->
@@ -26,12 +30,12 @@
         </select>
     </div>
     <div>
-        <label for="male" class="col-sm-2 control-label">Seeking</label>
-        <input type="radio" name="seek" id="male" value="male">Male<br>
+        <label for="male" class="col-sm-2 control-label">Seeking</label><br>
+        <input type="radio" name="seek" id="male" value="male">    Male
         <input type="radio" name="seek" id="female" value="female">Female<br>
     </div>
-    <div class="col-xs-3 ">
-        <input class="form-control btn btn-default"
+    <div class="col-xs-3  float-right">
+        <input class="form-control btn btn-default" id="submit"
                type="submit" value="next>>">
     </div>
 </form>

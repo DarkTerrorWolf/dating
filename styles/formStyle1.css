@@ -1,0 +1,18 @@
+#first {
+    font-weight: bold;
+}
+
+#floater {
+    border: solid darkgray 2px;
+    background-color: lightgray;
+    margin-right: 10px;
+}
+#submit{
+    border: solid darkgray 2px;
+    background-color: lightgray;
+    margin-right: 10px;
+}
+#bio{
+    width: 300px;
+    height: 150px;
+}
