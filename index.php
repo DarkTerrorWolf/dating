@@ -65,7 +65,7 @@ $f3->route('GET|POST /interests', function ($f3) {
     $view = new Template();
     echo $view->render("views/form3.html");
 });
-$f3->route('GET /overview', function ($f3) {
+$f3->route('GET|POST /overview', function ($f3) {
     $view = new Template();
     echo $view->render("views/summary.html");
     session_destroy();

@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/formStyle1.css">
 </head>
 <body>
-<div id='info'>
+<div class="col-4 float-right">
+    <img src="images/images.png" alt="Blank profile picture">
+</div>
+
+<div id='info' class="col-4 summary">
     <p>Name: {{@SESSION.fname}} {{@SESSION.lname}}</p>
     <hr>
     <p>Gender: {{@SESSION.gender}}</p>
@@ -29,6 +36,15 @@
         </repeat>
     </p>
 </div>
-<p id="bio">bio: {{@SESSION.bio}}</p>
+<div>
+
+    <p id="bio" class="float-right">
+        biography<br>
+        {{@SESSION.bio}}</p>
+</div>
+<div class="col-sm-3">
+    <input class="form-control btn btn-default rounded" id="submit"
+           type="submit" value="ContactMe" formaction="#">
+</div>
 </body>
 </html>

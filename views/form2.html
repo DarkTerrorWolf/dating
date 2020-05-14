@@ -12,8 +12,8 @@
 <hr>
 <form action="#" method="post" class="form-horizontal">
     <div class="col-sm-4 float-right">
-        <label for="bio" class="col-sm-2 control-label" >Biography</label>
-        <input class="form-control" type="text" name="bio" id="bio">
+        <label for="bio" class="col-md-2 control-label" >Biography</label>
+        <textarea class="form-control" type="textbox" name="bio" id="bio"></textarea>
     </div>
     <label for="email" class="col-md-2 control-label">Email</label>
     <div class="col-md-6">
@@ -22,7 +22,6 @@
 
     <label for="state" class="col-md-2 control-label">State</label>
     <div class="col-md-6">
-        <!--<input class="form-control" type="text" name="state" id="state">-->
         <select name="state" id="state">
             <repeat group="{{$states}}" value="{{@stat}}">
                 <option value="{{(@stat)}}">{{@stat}}</option>
@@ -38,6 +37,7 @@
         <input class="form-control btn btn-default rounded" id="submit"
                type="submit" value="next>>">
     </div>
+
 </form>
 </body>
 </html>
