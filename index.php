@@ -60,8 +60,8 @@ $f3->route('GET|POST /interests', function ($f3) {
 
         $f3->reroute('overview');
     }
-    $f3 ->set('outside',array('hiking','biking','swimming','collecting','walking','climbing'));
-    $f3 -> set('inside',array('tv','movies','cooking','board games','puzzles','reading','playing cards','video games'));
+    $f3 ->set('outside',getIndoor());
+    $f3 -> set('inside',getOutdoor());
     $view = new Template();
     echo $view->render("views/form3.html");
 });
