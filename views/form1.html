@@ -15,7 +15,10 @@
     <label for="fname" class="col-sm-2 control-label">First name</label>
 
     <div class="col-md-7">
-        <input class="form-control" type="text" name="fname" id="fname">
+        <input class="form-control" type="text" name="fname" id="fname" value="{{@fname}}">
+        <check if="{{ isset(@errors['fname']) }}">
+            {{ @errors['fname'] }}
+        </check>
     </div>
     <div id="floater" class="float-right col-4">
         <p class="rounded"><a id="first">Note: </a>All information entered is protected by our privacy policy. Profile information can only
@@ -23,11 +26,17 @@
     </div>
     <label for="lname" class="col-md-2 control-label">Last name</label>
     <div class="col-md-7">
-        <input class="form-control" type="text" name="lname" id="lname">
+        <input class="form-control" type="text" name="lname" id="lname" value="{{@lname}}">
+        <check if="{{ isset(@errors['lname']) }}">
+            {{ @errors['lname'] }}
+        </check>
     </div>
     <label for="age" class="col-md-2 control-label">Age</label>
     <div class="col-md-7">
-        <input class="form-control" type="text" name="age" id="age">
+        <input class="form-control" type="text" name="age" id="age" value="{{@age}}">
+        <check if="{{ isset(@errors['age']) }}">
+        {{ @errors['age'] }}
+        </check>
     </div>
     <label for="male" class="col-md-2 control-label">Gender</label>
     <div>
@@ -36,7 +45,10 @@
     </div>
     <label for="phone" class="col-md-2 control-label">Phone Number</label>
     <div class="col-md-7">
-        <input class="form-control" type="text" name="phone" id="phone">
+        <input class="form-control" type="text" name="phone" id="phone" value="{{@phone}}">
+    <check if="{{ isset(@errors['phone']) }}">
+        {{ @errors['phone'] }}
+    </check>
     </div>
     <div class="col-xs-3 float-right " id="submit">
         <input class="form-control btn btn-default"

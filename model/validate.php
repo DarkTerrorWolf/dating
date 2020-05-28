@@ -16,32 +16,48 @@ class Validate
        @param String $food
        @return boolean
     */
-    function ValidName($name)
+
+     function validName($name)
     {
-        return ctype_alpha($name);
+        return !ctype_alpha($name);
     }
     function validAge($age)
     {
-        return $age>=18&&$age<=118;
-    }
-    function validPhone($phone)
-    {
-        return ctype_alnum($phone)&&strlen($phone)<=9;
-    }
-    function validEmail($email)
-    {
-        if(strpos($email,"@")&&strpos($email,'.')){
-         return true;
+        if($age>17 && $age<119){
+            return true;
         }
         return false;
     }
-    function validOutdoor($outdoor)
+     function validPhone($phone)
     {
-        return in_array($outdoor,getOutdoor());
+        return ctype_alnum($phone)&&strlen($phone)<=9;
     }
-    function validIndoor($indoor)
+      function validEmail($email)
     {
-        return in_array($indoor,getIndoor());
+        if(strpos($email,"@")==false){
+            return true;
+        }
+        return false;
+    }
+
+     function validOutdoor($outdoor)
+    {
+        foreach ($outdoor as $out){
+            if(!in_array($out,getOutdoor())){
+                return false;
+            }
+        }
+        return true;
+    }
+
+     function validIndoor($indoor)
+    {
+        foreach ($indoor as $in){
+            if(!in_array($in,getIndoor())){
+                return false;
+            }
+        }
+        return true;
     }
 
 
