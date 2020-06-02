@@ -1,12 +1,11 @@
 <?php
 
 ini_set('display_errors', 1);
-session_start();
 error_reporting(E_ALL);
 
 require_once('vendor/autoload.php');
 require_once("model/data-layer.php");
-
+session_start();
 //F3 class
 $f3 = Base::instance();
 $validator = new Validate();

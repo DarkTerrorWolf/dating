@@ -50,13 +50,20 @@ class Controller
             if (empty($phone) || $this->_validator->validPhone($phone)) {
                 $this->_f3->set('errors["phone"]', "Please enter a valid phone ex:1234567890");
             }
+            if(isset($_POST['checkbox'])){
+                $_SESSION['member']=new PremiumMember();
+                $_SESSION['premium']=true;
+            }
+            else{
+                $_SESSION['member']= new Member();
+            }
 
             if (empty($this->_f3->get('errors'))) {
-                $_SESSION['fname'] = $fname;
-                $_SESSION['lname'] = $lname;
-                $_SESSION['age'] = $age;
-                $_SESSION['gender'] = $gender;
-                $_SESSION['phone'] = $phone;
+                $_SESSION['member']->setFname($fname);
+                $_SESSION['member']->setLname($lname);
+                $_SESSION['member']->setAge($age);
+                $_SESSION['member']->setGender($gender);
+                $_SESSION['member']->setPhone($phone);
                 $this->_f3->reroute('Profile');
             }
         }
@@ -75,11 +82,15 @@ class Controller
                  $this->_f3->set('errors["email"]', "Please enter a valid email");
              }
             if(empty($this->_f3->get('errors'))) {
-                $_SESSION['bio'] = $bio;
-                $_SESSION['state'] = $state;
-                $_SESSION['seek'] = $seek;
-                $_SESSION['email'] = $email;
-                $this->_f3->reroute('interests');
+                $_SESSION['member']->setBio($bio);
+                $_SESSION['member']->setState($state);
+                $_SESSION['member']->setSeeking($seek);
+                $_SESSION['member']->setEmail($email);
+                if(isset($_SESSION['premium'])){
+                    $this->_f3->reroute('interests');}
+                else{
+                    $this->_f3->reroute('overview');
+                }
             }
         }
 
@@ -100,8 +111,8 @@ class Controller
             if(!empty($outdoor) && $this->_validator->validOutdoor($outdoor) ){
                 $this->_f3->set('errors["email"]', "Please choose a listed outdoor activity");
             }
-            $_SESSION['indoor'] = $indoor;
-            $_SESSION['outdoor'] = $outdoor;
+            $_SESSION['member']->setIndoor($indoor);
+            $_SESSION['member']->setOutdoor($outdoor);
 
             $this->_f3->reroute('overview');
         }

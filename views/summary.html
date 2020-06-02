@@ -13,34 +13,36 @@
 </div>
 
 <div id='info' class="col-4 summary">
-    <p>Name: {{@SESSION.fname}} {{@SESSION.lname}}</p>
+    <p>Name: {{@SESSION.member->getFname()}} {{@SESSION.member->getLname()}}</p>
     <hr>
-    <p>Gender: {{@SESSION.gender}}</p>
+    <p>Gender: {{@SESSION.member->getGender()}}</p>
     <hr>
-    <p>Age: {{@SESSION.age}}</p>
+    <p>Age: {{@SESSION.member->getAge()}}</p>
     <hr>
-    <p>Phone: {{@SESSION.phone}}</p>
+    <p>Phone: {{@SESSION.member->getPhone()}}</p>
     <hr>
-    <p>Email: {{@SESSION.email}}</p>
+    <p>Email: {{@SESSION.member->getEmail()}}</p>
     <hr>
-    <p>State: {{@SESSION.state}}</p>
+    <p>State: {{@SESSION.member->getState()}}</p>
     <hr>
-    <p>Seeking: {{@SESSION.seek}}</p>
+    <p>Seeking: {{@SESSION.member->getSeeking()}}</p>
     <hr>
     <p>Interests:
-        <repeat group="{{@SESSION.indoor}}" value="{{@in}}">
+        <check if="isset(@SESSION.premium)">
+        <repeat group="{{@SESSION.member->getIndoor()}}" value="{{@in}}">
             {{@in}},
         </repeat>
-        <repeat group="{{@SESSION.outdoor}}" value="{{@out}}">
+        <repeat group="{{@SESSION.member->getOutdoor()}}" value="{{@out}}">
             {{@out}},
         </repeat>
+        </check>
     </p>
 </div>
 <div>
 
     <p id="bio" class="float-right">
         biography<br>
-        {{@SESSION.bio}}</p>
+        {{@SESSION.member->getBio()}}</p>
 </div>
 <div class="container">
     <div class="row">
